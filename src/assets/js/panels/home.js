@@ -5,7 +5,7 @@
 
 'use strict';
 
-import { logger, database, changePanel } from '../utils.js';
+import { config, logger, database, changePanel } from '../utils.js';
 
 const { Launch, Status } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
@@ -28,6 +28,7 @@ class Home {
 
     async initNews() {
         let news = document.querySelector('.news-list');
+
         if (this.news) {
             if (!this.news.length) {
                 let blockNews = document.createElement('div');
@@ -35,14 +36,14 @@ class Home {
                 blockNews.innerHTML = `
                     <div class="news-header">
                         <div class="header-text">
-                            <div class="title">Aucun news n'ai actuellement disponible.</div>
+                            <div class="title">Aucune news n'est actuellement disponible.</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
                             <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
                         </div>
-                    </div>`
+                    </div>\nNous sommes aussi en train de développer une nouvelle partie pour le launcheur, nous vous en dirons plus prochainement !\nSur ce, bon jeu à vous tous !`
                 news.appendChild(blockNews);
             } else {
                 for (let News of this.news) {
@@ -74,15 +75,16 @@ class Home {
             blockNews.innerHTML = `
                 <div class="news-header">
                     <div class="header-text">
-                        <div class="title">Error.</div>
+                        <div class="title">Erreur interne.</div>
                     </div>
                 </div>
                 <div class="news-content">
                     <div class="bbWrapper">
-                        <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
+                        <p>Impossible de contacter le serveur des 'news'.</br>Merci de vérifier votre configuration puis actualisez cette page.</p>
                     </div>
                 </div>`
-            // news.appendChild(blockNews);
+
+            news.appendChild(blockNews);
         }
     }
 
@@ -159,7 +161,7 @@ class Home {
                 new logger('Minecraft', '#36b030');
                 if(launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
                 progressBar.style.display = "none"
-                info.innerHTML = `Demarrage en cours...`
+                info.innerHTML = `Démarrage en cours...`
                 console.log(e);
             })
 
@@ -208,4 +210,9 @@ class Home {
         return { year: year, month: allMonth[month - 1], day: day }
     }
 }
+
+function sleep(ms) {
+    return new Promise(r => setTimeout(r, ms));
+}
+
 export default Home;
