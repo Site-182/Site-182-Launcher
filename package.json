@@ -1,7 +1,7 @@
 {
     "name": "Radial-Launcher",
     "preductname": "Radial Launcher",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Launcher Mincraft custom (crack, premium)",
     "main": "src/app.js",
     "author": "RenardyLove",
