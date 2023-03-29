@@ -1,17 +1,17 @@
 {
-    "name": "Radial-Launcher",
-    "preductname": "Radial Launcher",
-    "version": "0.0.3",
-    "description": "Launcher Mincraft custom (crack, premium)",
+    "name": "Site-182-Launcher",
+    "preductname": "Site-182 Launcher",
+    "version": "0.0.1",
+    "description": "Custom launcher for site-182 server",
     "main": "src/app.js",
     "author": "RenardyLove",
-    "url": "http://s940752916.onlinehome.fr",
+    "url": "http://31.220.89.31",
     "engines": {
-        "node": "^16.x.x"
+        "node": "^18.x.x"
     },
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
-        "build": "node build.js",
+        "build": "node build.js --obf=true",
         "dev": "nodemon --exec npm start"
     },
     "license": "CC0",
@@ -20,17 +20,18 @@
     },
     "dependencies": {
         "electron-updater": "^5.0.1",
-        "minecraft-java-core": "^2.5.1",
+        "minecraft-java-core": "^3.1.1",
         "node-fetch": "^2.6.7"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
         "electron": "^20.0.0",
         "electron-builder": "^23.0.3",
+        "javascript-obfuscator": "^4.0.2",
         "nodemon": "^2.0.16"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/RenardyLove/Radial-Launcher.git"
+        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
     }
 }

@@ -64,20 +64,11 @@
     height: 37px;
     border-radius: 20px;
     border: none;
-    background: #0fc988;
+    background: #00bd7a;
     font: normal normal bold 20px/25px Poppins;
     color: #121212;
     margin: 15px 0;
-    box-shadow: 0 0 5px #0fc988;
-    box-sizing: 50px;
-    color: #F1F1F1;
-}
-
-.play-btn:hover {
-    transform:scale(1.1,1.1);
-    -webkit-transform:scale(1.1,1.1);
-    -moz-transform:scale(1.1,1.1);
-    align-items:flex-end;
+    box-shadow: 0 0 5px #00bd7a;
 }
 
 .download-content {
@@ -107,7 +98,7 @@
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: #0fc988;
+    background-color: #00bd7a;
     border-radius: 10px;
 }
 
@@ -122,12 +113,24 @@
     overflow: auto;
     width: 100%;
 }
+
 .news-list::-webkit-scrollbar {
     width: 0;
 }
 
 .news-block {
     margin-bottom: 1rem;
+    transition: opacity 1s;
+    opacity: .4;
+}
+
+.news-block:hover {
+    transition: opacity 1s;
+    opacity: 1;
+}
+
+.opacity-1 {
+    opacity: 1;
 }
 
 .news-header {
@@ -225,6 +228,13 @@
     height: 75px;
     background-color: #292929;
     border-radius: 10px;
+    transition: opacity 1s;
+    opacity: .4;
+}
+
+.server:hover {
+    transition: opacity 1s;
+    opacity: 1;
 }
 
 .server-img {
@@ -255,7 +265,7 @@
 }
 
 .green {
-    color: #30c91f;
+    color: #1AC707;
 }
 
 .red {
@@ -293,7 +303,7 @@
     border-radius: 10px;
     border: 2px solid #1A1A1A;
     transition: all .2s;
-    background-color: #0fc988;
+    background-color: #1AC707;
 }
 
 .online.off {
